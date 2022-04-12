@@ -6,6 +6,10 @@ const app = express();
 app.listen("3000");
 //usar insomnia
 
+//MÉTODO GET
+// app.route("/").get((req, res) => res.send("hello"));
+// app.route("/sobre").get((req, res) => res.send("hello sobre"));
+
 //MÉTODO POST
 //middleware = app.use(express.json());
 
