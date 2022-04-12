@@ -18,13 +18,20 @@ app.listen("3000");
 
 //MÉTODO PUT
 
-app.use(express.json()); //middleware
+// app.use(express.json()); //middleware
+
+// let author = "Maria";
+
+// app.route("/").get((req, res) => res.send(author));
+
+// app.route("/").put((req, res) => {
+//   author = req.body.author;
+//   res.send(author);
+// });
+
+//MÉTODO DELETE
 
 let author = "Maria";
-
-app.route("/").get((req, res) => res.send(author));
-
-app.route("/").put((req, res) => {
-  author = req.body.author;
-  res.send(author);
+app.route("/:identificador").delete((req, res) => {
+  res.send(req.params.identificador);
 });
