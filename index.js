@@ -48,3 +48,10 @@ app.route("/").post((req, res) => {
   const { nome, cidade } = req.body;
   res.send(`meu nome é ${nome} e minha cidade é ${cidade}`); //(req.body);//(req.body.nome)aparece somente o nome
 });
+
+//Route Params
+app.route("/").get((req, res) => res.send("oi"));
+app.route("/:variavel").get((req, res) => res.send(req.param.variavel)); //tudo que vem depois da barra ("/:name") vira variável
+app
+  .route("/:identidade/variavel")
+  .get((req, res) => res.send(req.param.variavel));
