@@ -55,3 +55,8 @@ app.route("/:variavel").get((req, res) => res.send(req.param.variavel)); //tudo 
 app
   .route("/:identidade/variavel")
   .get((req, res) => res.send(req.param.variavel));
+
+//Query Params
+app.route("/").get((req, res) => res.send(req.query)); //pode usar o & na barra após o localhost:3000?nome=NNnn&cidade+São Paulo
+//não tem limites de variaveis
+app.route("/about/user").get((req, res) => res.send(req.query)); //pode usar o & na barra após o localhost:3000/about/user?nome=NNnn
