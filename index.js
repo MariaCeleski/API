@@ -40,3 +40,11 @@ app.route("/:identificador").delete((req, res) => {
 app.route("/").get((req, res) => res.send(req.query.name));
 app.route("/").put((req, res) => res.send(req.body.author));
 app.route("/:parametro").get((req, res) => res.send(req.params.parametro));
+
+//Body Params - só é recebido pelo post,put,patch
+
+app.use(express.json());
+app.route("/").post((req, res) => {
+  const { nome, cidade } = req.body;
+  res.send(`meu nome é ${nome} e minha cidade é ${cidade}`); //(req.body);//(req.body.nome)aparece somente o nome
+});
